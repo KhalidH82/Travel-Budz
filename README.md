@@ -17,15 +17,16 @@ React, Rails, Devise, Third Party API intergration, React-Big Calender
 
 #TIMELINE
 
-Monday 4/9: 
+Monday 4/9:<br> 
 Create Rails app with Devise and link up 
 React front-end.
-Tuesday 4/10:
+Tuesday 4/10:<br> 
 Create CRUD functionality on user trips 			and Travel board. Allow users to comment on posted trips.
-Wednesday 4/11:
+Wednesday 4/11:<br> 
 Allow users to view other users profiles and plot trips on calender.
-Thursday 4/12: API integration to search flights and additional destination information.
-Friday-Sunday 4/13 - 4/15:
+Thursday 4/12:<br> 
+API integration to search flights and additional destination information.
+Friday-Sunday 4/13 - 4/15:<br> 
 Refactor code, additonal optional features, styling.
 
 
