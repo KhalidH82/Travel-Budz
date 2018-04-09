@@ -17,7 +17,7 @@ React, Rails, Devise, Third Party API intergration, React-Big Calender
 
 #TIMELINE
 
-Monday 4/9:<br> 
+Monday 4/9:</br> 
 Create Rails app with Devise and link up 
 React front-end.
 Tuesday 4/10:<br> 
