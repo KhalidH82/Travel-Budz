@@ -30,7 +30,7 @@ class TripsController < ApplicationController
 		@trip.save
 		render json: {
 			message: "Trip created!",
-			trip = @trip
+			trip: @trip
 		}
 	end
 
@@ -38,25 +38,15 @@ class TripsController < ApplicationController
 		@trip = Trip.find(params[:id])
 		@trip.update(trip_params)
 		render json: {
-			message: "Trip Updated!"
+			message: "Trip Updated!",
 			trip: @trip
 		}
 	end
 
 	private
 		def trip_params
-			params.require(:trips).permit(:destination, :date_of_dep, :date_of_arr, :start_city. :end_city, :details)
-		end
+			params.require(:trips).permit(:destination, :date_of_dep, :date_of_arr, :start_city, :end_city, :details)
+		
 	end	
 end
 
-
-    t.string "destination"
-    t.string "date_of_dep"
-    t.string "date_of_arr"
-    t.string "start_city"
-    t.string "end_city"
-    t.string "details"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end

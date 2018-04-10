@@ -21,3 +21,695 @@ Migrating to CreateTrips (20180409221611)
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Paris, France"], ["date_of_dep", "2018-10-12"], ["date_of_arr", "2018-10-21"], ["start_city", "JFK"], ["end_city", "CDG"], ["details", "Fall trip to Paris , 3 days in Barcelona, and 3 days in Cannes."], ["created_at", "2018-04-09 22:44:12.222004"], ["updated_at", "2018-04-09 22:44:12.222004"]]
   [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "trips"[0m
+Started GET "/" for ::1 at 2018-04-09 20:00:44 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/khalidhosein/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/khalidhosein/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-04-09 20:00:57 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/khalidhosein/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/khalidhosein/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2018-04-09 20:01:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/trips" for ::1 at 2018-04-09 21:24:57 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/trips"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:45:25 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:45:46 -0400
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:45:49 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:45:51 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:45:53 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:45:54 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:45:55 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:46:09 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:46:46 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:46:48 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+			trip = @trip
+			            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+...p, :date_of_arr, :start_city. :end_city, :details)
+...                              ^):
+  
+app/controllers/trips_controller.rb:33: syntax error, unexpected '\n', expecting =>
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:48: syntax error, unexpected tSYMBEG, expecting '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:47:26 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~):
+  
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:47:28 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~):
+  
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:47:37 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+			trip: @trip
+			^~~~):
+  
+app/controllers/trips_controller.rb:42: syntax error, unexpected tIDENTIFIER, expecting '}'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:47:58 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/trips_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:48:03 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/trips_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:48:05 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/trips_controller.rb:51: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:48:48 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 17ms (Views: 10.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 08:59:54 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (1.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 24ms (Views: 9.5ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:01:24 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:01:36 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:06:23 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:07:55 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:08:38 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:09:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:09:11 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:09:25 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:09:39 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:09:50 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:10:50 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:28:52 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:30:04 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:37:27 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:56:38 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips1" for 127.0.0.1 at 2018-04-10 09:57:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 09:58:01 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips1" for 127.0.0.1 at 2018-04-10 09:59:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-10 10:00:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:00:23 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-10 10:00:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:00:58 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-10 10:02:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:02:28 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:04:28 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-10 10:04:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:04:53 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:05:33 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:06:06 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-10 10:06:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:06:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-10 10:06:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:06:34 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/2" for 127.0.0.1 at 2018-04-10 10:07:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/2"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:07:31 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-10 10:25:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:25:57 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:35:22 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-10 10:58:52 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
