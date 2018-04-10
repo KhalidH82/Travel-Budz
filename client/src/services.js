@@ -17,7 +17,7 @@ class Services {
 			method: "POST",
 			url: "/api/trips",
 			data: {
-				description: trip.description,
+				destination: trip.destination,
 				date_of_dep: trip.date_of_dep,
 				date_of_arr: trip.date_of_arr,
 				start_city: trip.start_city,
@@ -33,7 +33,7 @@ class Services {
 			method: "PUT",
 			url: `/api/trips/${id}`,
 			data: {
-				description: trip.description,
+				destination: trip.destination,
 				date_of_dep: trip.date_of_dep,
 				date_of_arr: trip.date_of_arr,
 				start_city: trip.start_city,

@@ -1,6 +1,6 @@
 import React from 'react';
-import Service from '../services';
-import Redirect from 'react-router-dom';
+import Services from '../services';
+import { Redirect } from 'react-router-dom';
 
 class TripEditForm extends React.Component {
 	constructor() {

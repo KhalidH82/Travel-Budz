@@ -20,6 +20,7 @@ componentDidMount() {
 		apiDataLoaded: true,
 		apiData: trip.data.data
 	})
+		console.log(this.state.apiData)
 })
 	.catch( err => {
 		console.log('error', err);
@@ -27,16 +28,16 @@ componentDidMount() {
 }
 
 renderTrip() {
-	return (
+return (
 		<div className="single-trip">
-		<h1>{this.state.apiData.trip.description}</h1>
+		<h1>{this.state.apiData.destination}</h1>
 		<button onClick={this.deleteSong}> Remove Trip? </button>
 		</div>
 		)
 }
 
 deleteSong() {
-	Services.deleteSong(this.props.match.params.id)
+	Services.deleteTrip(this.props.match.params.id)
 	.then( song => {
 		this.setState({
 			fireRedirect: true
@@ -50,7 +51,7 @@ deleteSong() {
 render() {
 	return (
 		<div className="trip-single">
-		{this.state.apiDataLoaded ? this.renderSong() : ''}
+		{this.state.apiDataLoaded ? this.renderTrip() : ''}
 		{this.state.fireRedirect ? <Redirect to ="/trips" /> : ''}
 		</div>
 		)

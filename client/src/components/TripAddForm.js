@@ -29,7 +29,7 @@ class TripAddForm extends React.Component {
 	handleFormSubmit(e) {
 		e.preventDefault();
 		Services.createTrip(this.state)
-		.then( song => {
+		.then( trip => {
 			this.setState({
 				fireRedirect: true
 			})
