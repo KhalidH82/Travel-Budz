@@ -23,15 +23,16 @@ class TripEditForm extends React.Component {
 	componentDidMount() {
 		Services.getOneTrip(this.props.match.params.id)
 		.then(trip => {
+			console.log(trip)
 			this.setState({
 				apiDataLoaded: true,
 				apiData: trip.data,
-				destination: trip.data.trip.destination,
-				date_of_dep: trip.data.trip.date_of_dep,
-				date_of_arr: trip.data.trip.date_of_arr,
-				start_city:  trip.data.trip.start_city,
-				end_city: trip.data.trip.end_city,
-				details: trip.data.trip.details
+				destination: trip.data.data.destination,
+				date_of_dep: trip.data.data.date_of_dep,
+				date_of_arr: trip.data.data.date_of_arr,
+				start_city:  trip.data.data.start_city,
+				end_city: trip.data.data.end_city,
+				details: trip.data.data.details
 			})
 		})
 		.catch( err => {
@@ -49,7 +50,7 @@ class TripEditForm extends React.Component {
 
 	handleFormSubmit(e) {
 		e.preventDefault();
-		Services.updateSong(this.state, this.props.match.params.id)
+		Services.updateTrip(this.state, this.props.match.params.id)
 		.then( trip => {
 			this.setState({
 				fireRedirect: true
@@ -78,7 +79,7 @@ render() {
 	return (
 		<div className="edit-form-container">
 			{this.state.apiDataLoaded ? this.renderEditForm() : ''}
-			{this.state.fireRedirect ? <Redirect to={`/songs/${this.props.match.params.id}`} /> : ''}
+			{this.state.fireRedirect ? <Redirect to={`/trips/${this.props.match.params.id}`} /> : ''}
 		</div>
 		)
 	}

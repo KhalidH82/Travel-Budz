@@ -8,9 +8,12 @@ class TripSingle extends React.Component {
 		this.state = {
 			apiDataLoaded: false,
 			apiData: null,
-			fireRedirect: false
+			fireRedirect: false,
+			fireRedirect2: false
 	};
-		this.deleteSong = this.deleteSong.bind(this)
+		this.deleteTrip = this.deleteTrip.bind(this)
+		this.editTrip = this.editTrip.bind(this)
+		
 	}
 
 componentDidMount() {
@@ -31,14 +34,28 @@ renderTrip() {
 return (
 		<div className="single-trip">
 		<h1>{this.state.apiData.destination}</h1>
-		<button onClick={this.deleteSong}> Remove Trip? </button>
+		<p>{this.state.apiData.date_of_dep}</p>
+		<p>{this.state.apiData.date_of_arr}</p>
+		<p>{this.state.apiData.start_city}</p>
+		<p>{this.state.apiData.end_city}</p>
+		<p>{this.state.apiData.details}</p>
+		<button onClick={this.deleteTrip}> Remove Trip? </button>
+		<button onClick={this.editTrip}> Edit Trip? </button>
 		</div>
 		)
 }
 
-deleteSong() {
+editTrip(){
+	this.setState({
+		fireRedirect2: true
+	})
+}
+
+
+
+deleteTrip() {
 	Services.deleteTrip(this.props.match.params.id)
-	.then( song => {
+	.then( trip => {
 		this.setState({
 			fireRedirect: true
 		})
@@ -53,14 +70,13 @@ render() {
 		<div className="trip-single">
 		{this.state.apiDataLoaded ? this.renderTrip() : ''}
 		{this.state.fireRedirect ? <Redirect to ="/trips" /> : ''}
+		{this.state.fireRedirect2 ? <Redirect to ={`/trips/${this.props.match.params.id}/edit`} /> : ''}
 		</div>
 		)
 	}
 }
 
 export default TripSingle;
-
-
 
 
 

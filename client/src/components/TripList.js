@@ -2,14 +2,23 @@ import React, { Component } from 'react';
 import Services from '../services';
 import Trip from './Trip'
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class TripList extends Component {
 	constructor() {
 	super();
 	this.state = {
 		apiDataLoaded: false,
-		apiData: null
+		apiData: null,
+		fireRedirect: false
 	}
+	this.addTrip = this.addTrip.bind(this)
+}
+
+addTrip() {
+	this.setState ({
+		fireRedirect: true
+	})
 }
 
 componentDidMount() {
@@ -35,8 +44,10 @@ renderTrips() {
 render() {
 	return (
 		<div className="trip-list">
+		<button onClick={this.addTrip}> Add Trip </button>
 		{
 			this.state.apiDataLoaded ? this.renderTrips() : (<h1>Loading...</h1>)}
+			{this.state.fireRedirect ? <Redirect to="/trips/new" /> : <h1> </h1>}
 			
 		</div>
 		)

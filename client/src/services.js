@@ -3,13 +3,25 @@ import axios from 'axios';
 class Services {
 
 	getAllTrips() {
-		return axios.get('/api/trips')
+		return axios ({
+			method: "GET",
+			url: "/api/trips",
+			headers: {
+				'Authorization': localStorage.jwt,
+			}
+		})
 	};
 
 	getOneTrip(id) {
 		console.log("inside services")
-		return axios.get(`/api/trips/${id}`);
-	
+		
+		return axios ({
+			method: "GET",
+			url: `/api/trips/${id}`,
+			headers: {
+				'Authorization': localStorage.jwt,
+			}
+		})
 	};
 
 	createTrip(trip) {
@@ -23,7 +35,9 @@ class Services {
 				start_city: trip.start_city,
 				end_city: trip.end_city,
 				details: trip.details
-
+			},
+			headers: {
+				'Authorization': localStorage.jwt,
 			}
 		});
 	};
@@ -39,6 +53,9 @@ class Services {
 				start_city: trip.start_city,
 				end_city: trip.end_city,
 				details: trip.details
+			},
+			headers: {
+				'Authorization': localStorage.jwt,
 			}
 		})
 	}
@@ -46,7 +63,18 @@ class Services {
 	deleteTrip(id) {
 		return axios({
 			method: "DELETE",
-			url: `/api/trips/${id}`
+			url: `/api/trips/${id}`,
+		headers: {
+			'Authorization': localStorage.jwt,
+			}
+		})
+	}
+
+	logIn(user) {
+		return axios({
+			method: "POST",
+			url: '/api/user_token',
+			data: user
 		})
 	}
 };
