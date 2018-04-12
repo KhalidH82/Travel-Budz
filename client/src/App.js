@@ -8,9 +8,12 @@ class App extends Component {
   constructor() {
     super()
     this.state  = {
-      fireRedirect: false
+      apiDataLoaded: false,
+      email: null,
+      password: null
     }
     this.login = this.login.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   login () {
@@ -22,7 +25,7 @@ class App extends Component {
     .then(result => {
       localStorage.setItem("jwt", result.data.jwt)
       this.setState = ({
-        fireRedirect: true
+        apiDataLoaded: true
       })
     })
     .catch(err => {
@@ -30,8 +33,25 @@ class App extends Component {
     })
   }
 
+handleInputChange(e) {
+  let value = e.target.value;
+  if (e.target.name === "email") {
+    this.setState({
+      email: value
+    })
+
+  }
+  else {
+    this.setState({
+      password: value
+    })
+  }
+}
+
+
+
   render() {
-    if(this.fireRedirect == false) {
+      if(this.state.apiDataLoaded === false) {
           return (
       <div className="App">
         <h1 style={{marginTop: "20vh", marginBottom: "5vh"}}>
@@ -44,6 +64,7 @@ class App extends Component {
             name="email"
             id="email"
             type="email"
+            onChange={this.handleInputChange}
           />
           <br /><br />
           <label htmlFor="password">Password:</label>
@@ -52,6 +73,7 @@ class App extends Component {
             name="password"
             id="password"
             type="password"
+            onChange={this.handleInputChange}
           />
           </form>
           <br />
@@ -60,17 +82,19 @@ class App extends Component {
           >
               Login
           </button>
-          {this.state.fireRedirect ? <Redirect to={`/trips`} /> : ''}
         <br />
+          <div>Not signed up? <a href="/register">Click here</a> to register</div>
       </div>
-    );
-    }
+    )
+        }
+        else {
+          return (
+            <Redirect to="/trips"/>
+            )
+        }
+    
 
-    else {
-      return (
-        <Redirect to='/trips' />
-        )
-    }
+
 
   }
 

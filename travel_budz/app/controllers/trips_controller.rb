@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
 	before_action :authenticate_user
-	
+
 
 	def index
 		@trips = Trip.all
@@ -43,6 +43,10 @@ class TripsController < ApplicationController
 			message: "Trip Updated!",
 			trip: @trip
 		}
+	end
+
+	def search
+		
 	end
 
 	private

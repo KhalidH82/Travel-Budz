@@ -77,6 +77,24 @@ class Services {
 			data: user
 		})
 	}
+
+	register(info) {
+		return axios({
+			method: "POST",
+			url: "/api/user",
+			data: info
+		})
+	}
+
+	search(tdata) {
+		return axios.get('/api/search', {
+			params: {
+				data: tdata
+			}
+		})
+
+
+	}
 };
 
 export default new Services();
