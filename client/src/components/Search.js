@@ -1,6 +1,7 @@
 import React from 'react';
 import Services from '../services';
 import { Redirect } from 'react-router-dom';
+import {Button, Icon} from 'react-materialize'
 
 class Search extends React.Component {
 	constructor() {
@@ -67,7 +68,7 @@ class Search extends React.Component {
 			<input name="children" onChange={this.handleInputChange} type="text" placeholder="# of Children" />
 			<input name="lap_child" onChange={this.handleInputChange} type="text" placeholder="# Lap Child" />
 			<input name="child_seat" onChange={this.handleInputChange} type="text" placeholder="# of Children" />
-			<input type="submit" value="Search" />
+			<input className="waves-effect waves-light btn" type="submit" value="Search" />
 			</form>
 			</div>
 			)

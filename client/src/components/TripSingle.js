@@ -1,6 +1,9 @@
 import React from 'react';
 import Services from '../services';
 import { Redirect } from 'react-router-dom';
+import {Button, Icon} from 'react-materialize'
+import CommentList from './CommentList'
+import CommentAdd from './CommentAdd'
 
 class TripSingle extends React.Component {
 	constructor() {
@@ -9,7 +12,7 @@ class TripSingle extends React.Component {
 			apiDataLoaded: false,
 			apiData: null,
 			fireRedirect: false,
-			fireRedirect2: false
+			fireRedirect2: false		
 	};
 		this.deleteTrip = this.deleteTrip.bind(this)
 		this.editTrip = this.editTrip.bind(this)
@@ -39,8 +42,10 @@ return (
 		<p>{this.state.apiData.start_city}</p>
 		<p>{this.state.apiData.end_city}</p>
 		<p>{this.state.apiData.details}</p>
-		<button onClick={this.deleteTrip}> Remove Trip? </button>
-		<button onClick={this.editTrip}> Edit Trip? </button>
+		<button className="waves-effect waves-light btn" onClick={this.deleteTrip}><Icon left>delete_forever</Icon> Remove Trip? </button>
+		<button className="waves-effect waves-light btn" onClick={this.editTrip}><Icon left>edit</Icon> Edit Trip? </button>
+		<CommentList />
+		<CommentAdd />
 		</div>
 		)
 }

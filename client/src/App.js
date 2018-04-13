@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Services from './services'
 import { Redirect } from 'react-router-dom';
+import {Button, Icon} from 'react-materialize'
 
 class App extends Component {
   constructor() {
@@ -77,9 +77,9 @@ handleInputChange(e) {
           />
           </form>
           <br />
-          <button
+          <button className="btn waves-effect waves-light"
             onClick={this.login}
-          >
+          ><Icon left>cloud</Icon>
               Login
           </button>
         <br />

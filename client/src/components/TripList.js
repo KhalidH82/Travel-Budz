@@ -3,6 +3,7 @@ import Services from '../services';
 import Trip from './Trip'
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
+import {Button, Icon} from 'react-materialize'
 
 class TripList extends Component {
 	constructor() {
@@ -44,7 +45,7 @@ renderTrips() {
 render() {
 	return (
 		<div className="trip-list">
-		<button onClick={this.addTrip}> Add Trip </button>
+		<button className="waves-effect waves-light btn" onClick={this.addTrip}><Icon left>add_circle</Icon> Add Trip </button>
 		{
 			this.state.apiDataLoaded ? this.renderTrips() : (<h1>Loading...</h1>)}
 			{this.state.fireRedirect ? <Redirect to="/trips/new" /> : <h1> </h1>}

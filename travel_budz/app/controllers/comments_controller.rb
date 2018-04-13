@@ -2,10 +2,10 @@ class CommentsController < ApplicationController
 
 	def index
       @comments = Comment.all
-    render json: {
+      render json: {
       message: "Got all commments",
       data: @comments
-    }
+      }
   end
 
   def show
@@ -21,8 +21,6 @@ class CommentsController < ApplicationController
       message: "Comment created!",
       comment: @commment
     }
-  end
-
   end
 
   def edit

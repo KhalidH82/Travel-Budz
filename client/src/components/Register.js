@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Services from '../services';
 import { Redirect } from 'react-router';
+import '../App.css';
+import {Button, Icon} from 'react-materialize'
 
 class Register extends Component {
 	constructor() {
@@ -44,7 +46,7 @@ class Register extends Component {
 	render() {
 		if(this.state.apiDataLoaded === false) {
 			return (
-				<div className="Register-form">
+				<div className="App">
 				<h1 style={{marginTop: "20vh", marginBottom: "5vh"}}>
 				Register for Travel Budz
 				</h1>

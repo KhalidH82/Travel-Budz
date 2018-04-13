@@ -1,6 +1,7 @@
 import React from 'react';
 import Services from '../services';
 import { Redirect } from 'react-router-dom';
+import {Button, Icon} from 'react-materialize'
 
 class TripAddForm extends React.Component {
 	constructor() {
@@ -41,7 +42,7 @@ class TripAddForm extends React.Component {
 
 	render() {
 		return (
-			<div className="create-form">
+			<div className="trip-add-form">
 			<form onSubmit={this.handleFormSubmit}>
 			<input type="text" name="destination" onChange={this.handleInputChange} placeholder="Where are you going?" />
 			<input type="text" name="date_of_dep" onChange={this.handleInputChange} placeholder="Date of Departure" />
@@ -49,7 +50,7 @@ class TripAddForm extends React.Component {
 			<input type="text" name="start_city" onChange={this.handleInputChange} placeholder="Origin City" />
 			<input type="text" name="end_city" onChange={this.handleInputChange} placeholder="End City" />
 			<input type="text" name="details" onChange={this.handleInputChange} placeholder="Trip Details" />
-			<input type="submit" value="Create Trip" />
+			<input className="waves-effect waves-light btn" type="submit" value="Create Trip" />
 			</form>
 			{this.state.fireRedirect ? <Redirect to="/trips" /> : ''}
 			</div>

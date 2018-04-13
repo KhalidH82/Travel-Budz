@@ -1,6 +1,7 @@
 import React from 'react';
 import Services from '../services';
 import { Redirect } from 'react-router-dom';
+import {Button, Icon} from 'react-materialize'
 
 class TripEditForm extends React.Component {
 	constructor() {
@@ -70,7 +71,7 @@ renderEditForm() {
 		<input type="text" name="start_city" onChange={this.handleInputChange} value={this.state.start_city} />
 		<input type="text" name="end_city" onChange={this.handleInputChange} value={this.state.end_city} />
 		<input type="text" name="details" onChange={this.handleInputChange} value={this.state.details} />
-		<input type="submit" value="Edit Trip" />
+		<input className="waves-effect waves-light btn" type="submit" value="Edit Trip" />
 		</form>
 		)
 }

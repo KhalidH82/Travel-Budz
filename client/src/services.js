@@ -87,14 +87,46 @@ class Services {
 	}
 
 	search(tdata) {
-		return axios.get('/api/search', {
-			params: {
-				data: tdata
+		return axios({
+			method: "POST",
+			url: "api/trips/search",
+			data: tdata
+		})
+	}
+	
+	getAllComments() {
+		return axios ({
+			method: "GET",
+			url: "/api/comments",
+			headers: {
+				'Authorization': localStorage.jwt,
 			}
 		})
+	};
 
-
+	createComment(comment) {
+		return axios ({
+			method: "POST",
+			url: "/api/comments",
+			data: {
+				comment: comment
+			},
+			headers: {
+				'Authorization': localStorage.jwt,
+			}
+		})
 	}
+
+	deleteComment(id) {
+		return axios({
+			method: "DELETE",
+			url: `/api/comments/${id}`,
+		headers: {
+			'Authorization': localStorage.jwt,
+			}
+		})
+	}
+
 };
 
 export default new Services();

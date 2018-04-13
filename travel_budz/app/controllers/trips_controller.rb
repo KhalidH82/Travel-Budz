@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+	include HTTParty
 	before_action :authenticate_user
 
 
@@ -46,7 +47,11 @@ class TripsController < ApplicationController
 	end
 
 	def search
-		
+		@response = HTTParty.get("")
+    	render json: {
+      		message: "Flight data",
+      		data: @response
+    }		
 	end
 
 	private
