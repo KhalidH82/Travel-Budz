@@ -88,8 +88,8 @@ class Services {
 
 	search(tdata) {
 		return axios({
-			method: "POST",
-			url: "api/trips/search",
+			method: "GET",
+			url: "/api/trips/search",
 			data: tdata
 		})
 	}

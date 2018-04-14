@@ -12,25 +12,24 @@ class App extends Component {
       email: null,
       password: null
     }
-    this.login = this.login.bind(this)
+    this.logIn = this.logIn.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  login () {
-    const email = "1"
-    const password = "1"
-    const request = {"auth": {"email": email, "password": password}}
-    console.log(request)
+   logIn () {
+    const request = {"auth": {"email": this.state.email, "password": this.state.password}}
     Services.logIn(request)
-    .then(result => {
-      localStorage.setItem("jwt", result.data.jwt)
-      this.setState = ({
-        apiDataLoaded: true
+      .then(result => {
+        localStorage.setItem("jwt", result.data.jwt)
+        localStorage.setItem("email", this.state.email)
+        this.setState({
+          apiDataLoaded: true
+        })
+        console.log(result)
       })
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      .catch(err => {
+        console.log(err);
+      })
   }
 
 handleInputChange(e) {
@@ -78,7 +77,7 @@ handleInputChange(e) {
           </form>
           <br />
           <button className="btn waves-effect waves-light"
-            onClick={this.login}
+            onClick={this.logIn}
           ><Icon left>cloud</Icon>
               Login
           </button>

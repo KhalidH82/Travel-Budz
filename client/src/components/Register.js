@@ -70,7 +70,7 @@ class Register extends Component {
 				/>
 				</form>
 				<br />
-				<button onClick={this.register}>
+				<button className="btn waves-effect waves-light" onClick={this.register}><Icon left>person_add</Icon>
 					Register
 					</button>
 					<br />
