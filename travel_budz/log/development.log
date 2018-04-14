@@ -14400,3 +14400,1568 @@ Processing by TripsController#index as HTML
 Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.8ms)
 
 
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-14 13:02:06 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dieselk@optonline.net"], ["LIMIT", 1]]
+Completed 201 Created in 72ms (Views: 0.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:02:06 -0400
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.7ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 45ms (Views: 14.8ms | ActiveRecord: 17.2ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 13:02:08 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 13:02:08 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 14ms (Views: 7.3ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:06:16 -0400
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:07:02 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+				:headers => {
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+					'Content-Type' => "application...
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+					'Content-Type' => "application/json"
+					               ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected ')', expecting keyword_end
+					)
+					^):
+  
+app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:82: syntax error, unexpected ')', expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:08:18 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+				:headers => {
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+					'Content-Type' => "application...
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+					'Content-Type' => "application/json"
+					               ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+					}
+					^):
+  
+app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:09:55 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+				:headers => {
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+					'Content-Type' => "application...
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+					'Content-Type' => "application/json"
+					               ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+					}
+					^):
+  
+app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:11:15 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+				:headers => {
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+					'Content-Type' => "application...
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+					'Content-Type' => "application/json"
+					               ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+					}
+					^):
+  
+app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:11:17 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+				:headers => {
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+					'Content-Type' => "application...
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+					'Content-Type' => "application/json"
+					               ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+					}
+					^):
+  
+app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:11:30 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+				:headers => {
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+					'Content-Type' => "application...
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+					'Content-Type' => "application/json"
+					               ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+					}
+					^):
+  
+app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:13:31 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+				:headers => {
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+					'Content-Type' => "application...
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+					'Content-Type' => "application/json"
+					               ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+					}
+					^):
+  
+app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/trips_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/trips_controller.rb:81: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:82: syntax error, unexpected '}', expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:14:46 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+				:headers => {
+				^):
+  
+app/controllers/trips_controller.rb:79: syntax error, unexpected tSYMBEG, expecting ')'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:15:28 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:83: syntax error, unexpected tIDENTIFIER, expecting ')'
+		render json: {
+		^~~~~~):
+  
+app/controllers/trips_controller.rb:83: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:15:43 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:83: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+		render json: {
+		       ^~~~~):
+  
+app/controllers/trips_controller.rb:83: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:18:40 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:83: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+		render json: {
+		       ^~~~~):
+  
+app/controllers/trips_controller.rb:83: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:25:57 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:83: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+		render json: {
+		       ^~~~~):
+  
+app/controllers/trips_controller.rb:83: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:27:48 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:83: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+		render json: {
+		       ^~~~~):
+  
+app/controllers/trips_controller.rb:83: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:29:27 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:85: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+		render json: {
+		       ^~~~~):
+  
+app/controllers/trips_controller.rb:85: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:30:11 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:85: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+		render json: {
+		       ^~~~~):
+  
+app/controllers/trips_controller.rb:85: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:30:30 -0400
+  
+LoadError (cannot load such file -- httparty):
+  
+app/controllers/trips_controller.rb:1:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:30:50 -0400
+  
+ActionController::RoutingError (uninitialized constant TripsController::HTTParty):
+  
+app/controllers/trips_controller.rb:3:in `<class:TripsController>'
+app/controllers/trips_controller.rb:2:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:31:06 -0400
+  
+ActionController::RoutingError (uninitialized constant TripsController::HTTParty):
+  
+app/controllers/trips_controller.rb:3:in `<class:TripsController>'
+app/controllers/trips_controller.rb:2:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:34:27 -0400
+  
+ActionController::RoutingError (uninitialized constant TripsController::HTTParty):
+  
+app/controllers/trips_controller.rb:3:in `<class:TripsController>'
+app/controllers/trips_controller.rb:2:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:34:40 -0400
+  
+ActionController::RoutingError (uninitialized constant TripsController::HTTParty):
+  
+app/controllers/trips_controller.rb:3:in `<class:TripsController>'
+app/controllers/trips_controller.rb:2:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:38:11 -0400
+  
+LoadError (cannot load such file -- httparty):
+  
+app/controllers/trips_controller.rb:1:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:38:33 -0400
+  
+LoadError (cannot load such file -- httparty):
+  
+app/controllers/trips_controller.rb:1:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:39:22 -0400
+  
+LoadError (cannot load such file -- HTTParty):
+  
+app/controllers/trips_controller.rb:1:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:53:05 -0400
+  
+LoadError (cannot load such file -- httparty):
+  
+app/controllers/trips_controller.rb:1:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:53:38 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant TripsController::HTTParty):
+  
+app/controllers/trips_controller.rb:4:in `<class:TripsController>'
+app/controllers/trips_controller.rb:3:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:53:51 -0400
+  
+LoadError (cannot load such file -- httparty):
+  
+app/controllers/trips_controller.rb:1:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:54:02 -0400
+  
+LoadError (cannot load such file -- httparty):
+  
+app/controllers/trips_controller.rb:1:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 13:54:16 -0400
+  
+LoadError (cannot load such file -- HTTParty):
+  
+app/controllers/trips_controller.rb:1:in `<top (required)>'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 14:04:08 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.9ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 38ms (Views: 10.0ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:04:36 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 14:04:51 -0400
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 16ms (Views: 2.5ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 14:05:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 14:05:21 -0400
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/trips/7" for 127.0.0.1 at 2018-04-14 14:05:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/7"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 14:05:25 -0400
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 14:05:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 14:05:47 -0400
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 14:05:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/trips/1"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 14:07:00 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 24ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 14:07:00 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (2.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 61ms (Views: 9.1ms | ActiveRecord: 50.0ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 14:07:52 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 14:07:52 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-14 14:08:26 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"Awesome", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["comment", "Awesome"], ["created_at", "2018-04-14 18:08:26.401907"], ["updated_at", "2018-04-14 18:08:26.401907"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 14:08:26 -0400
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 14:08:27 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 14:08:27 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 14:08:49 -0400
+Processing by TripsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:09:49 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:11:11 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 164ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:13:08 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 310ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:14:27 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 58ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:16:55 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 45ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:18:31 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 67ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:24:54 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 88ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:30:42 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 59ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:33:35 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 59ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:40:05 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 83ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:42:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 103ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 14:43:07 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 59ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:03:05 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:58: syntax error, unexpected =>
+					"Adults"=>=> "1",
+					          ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:58: syntax error, unexpected ',', expecting keyword_end
+					"Adults"=>=> "1",
+					                ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:59: syntax error, unexpected =>, expecting keyword_end
+					"Child"=> "0",
+					       ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:59: syntax error, unexpected ',', expecting keyword_end
+					"Child"=> "0",
+					             ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:60: syntax error, unexpected =>, expecting keyword_end
+					"ClassOfService"=> "ECONOMY",
+					                ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:60: syntax error, unexpected ',', expecting keyword_end
+...		"ClassOfService"=> "ECONOMY",
+...		                            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:61: syntax error, unexpected =>, expecting keyword_end
+					"InfantInLap"=> "0",
+					             ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:61: syntax error, unexpected ',', expecting keyword_end
+					"InfantInLap"=> "0",
+					                   ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:62: syntax error, unexpected =>, expecting keyword_end
+					"InfantOnSeat"=> "0",
+					              ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:62: syntax error, unexpected ',', expecting keyword_end
+					"InfantOnSeat"=> "0",
+					                    ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:63: syntax error, unexpected =>, expecting keyword_end
+					"Seniors"=> "0",
+					         ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:63: syntax error, unexpected ',', expecting keyword_end
+					"Seniors"=> "0",
+					               ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:64: syntax error, unexpected =>, expecting keyword_end
+					"TypeOfTrip"=> "ROUNDTRIP",
+					            ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:64: syntax error, unexpected ',', expecting keyword_end
+...				"TypeOfTrip"=> "ROUNDTRIP",
+...				                          ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:65: syntax error, unexpected =>, expecting keyword_end
+					"SegmentDetails"=> [
+					                ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected '}', expecting keyword_end
+					}
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:84: syntax error, unexpected ')', expecting keyword_end
+					})
+					 ^):
+  
+app/controllers/trips_controller.rb:58: syntax error, unexpected =>
+app/controllers/trips_controller.rb:58: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:59: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:59: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:60: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:60: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:61: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:61: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:62: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:62: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:63: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:63: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:64: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:64: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:65: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:79: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:84: syntax error, unexpected ')', expecting keyword_end
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:03:52 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:58: syntax error, unexpected =>
+					"Adults"=>=> "1",
+					          ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:58: syntax error, unexpected ',', expecting keyword_end
+					"Adults"=>=> "1",
+					                ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:59: syntax error, unexpected =>, expecting keyword_end
+					"Child"=> "0",
+					       ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:59: syntax error, unexpected ',', expecting keyword_end
+					"Child"=> "0",
+					             ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:60: syntax error, unexpected =>, expecting keyword_end
+					"ClassOfService"=> "ECONOMY",
+					                ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:60: syntax error, unexpected ',', expecting keyword_end
+...		"ClassOfService"=> "ECONOMY",
+...		                            ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:61: syntax error, unexpected =>, expecting keyword_end
+					"InfantInLap"=> "0",
+					             ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:61: syntax error, unexpected ',', expecting keyword_end
+					"InfantInLap"=> "0",
+					                   ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:62: syntax error, unexpected =>, expecting keyword_end
+					"InfantOnSeat"=> "0",
+					              ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:62: syntax error, unexpected ',', expecting keyword_end
+					"InfantOnSeat"=> "0",
+					                    ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:63: syntax error, unexpected =>, expecting keyword_end
+					"Seniors"=> "0",
+					         ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:63: syntax error, unexpected ',', expecting keyword_end
+					"Seniors"=> "0",
+					               ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:64: syntax error, unexpected =>, expecting keyword_end
+					"TypeOfTrip"=> "ROUNDTRIP",
+					            ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:64: syntax error, unexpected ',', expecting keyword_end
+...				"TypeOfTrip"=> "ROUNDTRIP",
+...				                          ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:65: syntax error, unexpected =>, expecting keyword_end
+					"SegmentDetails"=> [
+					                ^~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:79: syntax error, unexpected '}', expecting keyword_end
+					},
+					^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:84: syntax error, unexpected ')', expecting keyword_end
+					})
+					 ^):
+  
+app/controllers/trips_controller.rb:58: syntax error, unexpected =>
+app/controllers/trips_controller.rb:58: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:59: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:59: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:60: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:60: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:61: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:61: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:62: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:62: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:63: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:63: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:64: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:64: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:65: syntax error, unexpected =>, expecting keyword_end
+app/controllers/trips_controller.rb:79: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:84: syntax error, unexpected ')', expecting keyword_end
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:04:29 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 58ms (Views: 0.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:05:43 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 46ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:05:59 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 167ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:08:38 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected ',', expecting =>
+...ontent-Type: application/json',
+...                              ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:84: syntax error, unexpected '}', expecting keyword_end
+					})
+					^):
+  
+app/controllers/trips_controller.rb:82: syntax error, unexpected ',', expecting =>
+app/controllers/trips_controller.rb:84: syntax error, unexpected '}', expecting keyword_end
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:09:10 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 233ms (Views: 0.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:09:34 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 139ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:10:26 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:81: syntax error, unexpected tSYMBEG, expecting ')'
+				:header => {
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:84: syntax error, unexpected ')', expecting keyword_end
+					})
+					 ^):
+  
+app/controllers/trips_controller.rb:81: syntax error, unexpected tSYMBEG, expecting ')'
+app/controllers/trips_controller.rb:84: syntax error, unexpected ')', expecting keyword_end
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:10:44 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 47ms (Views: 0.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:13:10 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 63ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:16:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 65ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:18:19 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 64ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:18:35 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 52ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:20:03 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 68ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:20:30 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 66ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:22:22 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:22:22 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 53ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:23:34 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 55ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:24:06 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 64ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:24:17 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 54ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:25:14 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 65ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:26:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 55ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:26:26 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 61ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:26:59 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 68ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:32:22 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 89ms (Views: 0.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:32:23 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 58ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:33:24 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:33:34 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 44ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:38:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant TripsController::Type):
+  
+app/controllers/trips_controller.rb:87:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:38:35 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant TripsController::Type):
+  
+app/controllers/trips_controller.rb:87:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:39:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant TripsController::Type):
+  
+app/controllers/trips_controller.rb:87:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:39:39 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant TripsController::Type):
+  
+app/controllers/trips_controller.rb:87:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:39:52 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant TripsController::Type):
+  
+app/controllers/trips_controller.rb:87:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:41:22 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 1.6ms)
+
+
+  
+NameError (uninitialized constant TripsController::Type):
+  
+app/controllers/trips_controller.rb:87:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:44:11 -0400
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:44:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 64ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 56ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:44:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 60ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:44:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 64ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:44:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 56ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:44:45 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 56ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:44:45 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 59ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:49:03 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 118ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-14 16:50:32 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 54ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:07:50 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 27ms (Views: 18.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 17:07:50 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 17:07:51 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 3.2ms)
+
+
+Started DELETE "/api/comments/8" for 127.0.0.1 at 2018-04-14 17:07:58 -0400
+Processing by CommentsController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (6.0ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 8]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 17:07:58 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:08:01 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 17:08:04 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 17:08:04 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:10:27 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 17:10:27 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 17:10:27 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:16:53 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:17:30 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:18:02 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:18:11 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:18:43 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:19:05 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:19:15 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:19:20 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:19:26 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:19:56 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:20:14 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:20:20 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:20:43 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:22:26 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/7" for 127.0.0.1 at 2018-04-14 17:22:29 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 17:22:29 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/trips/7" for 127.0.0.1 at 2018-04-14 17:22:31 -0400
+Processing by TripsController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (5.7ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = $1[0m  [["id", 7]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:22:31 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:22:53 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:23:12 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:24:43 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:25:41 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:26:06 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:26:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:26:40 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:26:43 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:26:50 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:28:56 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Marinhais"], ["date_of_dep", "2018-04-15"], ["date_of_arr", "2018-04-23"], ["start_city", "Lápas"], ["end_city", "Canhas"], ["details", "turpis a pede posuere nonummy integer non velit donec diam neque vestibulum eget vulputate ut"], ["created_at", "2018-04-14 21:38:48.054793"], ["updated_at", "2018-04-14 21:38:48.054793"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Goranboy"], ["date_of_dep", "2018-04-16"], ["date_of_arr", "2018-04-20"], ["start_city", "Barrancas"], ["end_city", "Guilhabreu"], ["details", "eget nunc donec quis orci eget orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio"], ["created_at", "2018-04-14 21:38:48.056963"], ["updated_at", "2018-04-14 21:38:48.056963"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Avarua"], ["date_of_dep", "2018-04-15"], ["date_of_arr", "2018-04-24"], ["start_city", "Llazicë"], ["end_city", "Lousado"], ["details", "dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis"], ["created_at", "2018-04-14 21:38:48.058656"], ["updated_at", "2018-04-14 21:38:48.058656"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Sonlit"], ["date_of_dep", "2018-04-18"], ["date_of_arr", "2018-04-20"], ["start_city", "Cibeureum"], ["end_city", "Dukay"], ["details", "in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst"], ["created_at", "2018-04-14 21:38:48.060484"], ["updated_at", "2018-04-14 21:38:48.060484"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Krajan Tanjungrejo"], ["date_of_dep", "2018-04-18"], ["date_of_arr", "2018-04-20"], ["start_city", "Yanghu"], ["end_city", "Sansanné-Mango"], ["details", "vel enim sit amet nunc viverra dapibus nulla suscipit ligula in lacus curabitur at ipsum ac tellus"], ["created_at", "2018-04-14 21:38:48.062468"], ["updated_at", "2018-04-14 21:38:48.062468"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Banjar Ambengan"], ["date_of_dep", "2018-04-15"], ["date_of_arr", "2018-04-20"], ["start_city", "Bribir"], ["end_city", "Lučko"], ["details", "sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero"], ["created_at", "2018-04-14 21:38:48.064155"], ["updated_at", "2018-04-14 21:38:48.064155"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Grzybowa Góra"], ["date_of_dep", "2018-04-16"], ["date_of_arr", "2018-04-22"], ["start_city", "Dinskaya"], ["end_city", "Granada"], ["details", "a odio in hac habitasse platea dictumst maecenas ut massa quis"], ["created_at", "2018-04-14 21:38:48.065668"], ["updated_at", "2018-04-14 21:38:48.065668"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Strathmore"], ["date_of_dep", "2018-04-16"], ["date_of_arr", "2018-04-24"], ["start_city", "Otoka"], ["end_city", "Huaxian"], ["details", "porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea dictumst"], ["created_at", "2018-04-14 21:38:48.067278"], ["updated_at", "2018-04-14 21:38:48.067278"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Quisqueya"], ["date_of_dep", "2018-04-19"], ["date_of_arr", "2018-04-22"], ["start_city", "Xinzhai"], ["end_city", "Bultfontein"], ["details", "consectetuer adipiscing elit proin interdum mauris non ligula pellentesque ultrices phasellus"], ["created_at", "2018-04-14 21:38:48.068937"], ["updated_at", "2018-04-14 21:38:48.068937"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "les Escaldes"], ["date_of_dep", "2018-04-15"], ["date_of_arr", "2018-04-21"], ["start_city", "Lalupon"], ["end_city", "Varjota"], ["details", "at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat erat quisque erat"], ["created_at", "2018-04-14 21:38:48.070557"], ["updated_at", "2018-04-14 21:38:48.070557"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Khorugh"], ["date_of_dep", "2018-04-16"], ["date_of_arr", "2018-04-23"], ["start_city", "Hartola"], ["end_city", "Căuşeni"], ["details", "justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor"], ["created_at", "2018-04-14 21:38:48.072308"], ["updated_at", "2018-04-14 21:38:48.072308"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Bendorubuh"], ["date_of_dep", "2018-04-17"], ["date_of_arr", "2018-04-20"], ["start_city", "Sande São Martinho"], ["end_city", "Minien East"], ["details", "sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus"], ["created_at", "2018-04-14 21:38:48.074008"], ["updated_at", "2018-04-14 21:38:48.074008"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Ungus-Ungus"], ["date_of_dep", "2018-04-15"], ["date_of_arr", "2018-04-20"], ["start_city", "Žrnovnica"], ["end_city", "Jiqu"], ["details", "curabitur at ipsum ac tellus semper interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum"], ["created_at", "2018-04-14 21:38:48.075485"], ["updated_at", "2018-04-14 21:38:48.075485"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Ak’ordat"], ["date_of_dep", "2018-04-15"], ["date_of_arr", "2018-04-22"], ["start_city", "Néa Plágia"], ["end_city", "Washington"], ["details", "commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris"], ["created_at", "2018-04-14 21:38:48.076876"], ["updated_at", "2018-04-14 21:38:48.076876"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Taivalkoski"], ["date_of_dep", "2018-04-18"], ["date_of_arr", "2018-04-20"], ["start_city", "Curahpacul Satu"], ["end_city", "Soroca"], ["details", "consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed"], ["created_at", "2018-04-14 21:38:48.078347"], ["updated_at", "2018-04-14 21:38:48.078347"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:38:57 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:39:15 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:42:42 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:46:21 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:46:50 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:47:50 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:48:38 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:52:34 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:53:14 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:53:58 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:54:38 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:54:44 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:55:25 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:55:30 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:56:52 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:57:11 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:57:45 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 17:57:57 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:00:58 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:01:42 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:02:10 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:04:58 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:05:07 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/trips" for 127.0.0.1 at 2018-04-14 18:05:52 -0400
+Processing by TripsController#create as HTML
+  Parameters: {"destination"=>"Cancun", "date_of_dep"=>"2018-05-09", "date_of_arr"=>"2018-05-09", "start_city"=>"JFK", "end_city"=>"CUN", "details"=>"Party time!", "trip"=>{"destination"=>"Cancun", "date_of_dep"=>"2018-05-09", "date_of_arr"=>"2018-05-09", "start_city"=>"JFK", "end_city"=>"CUN", "details"=>"Party time!"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Cancun"], ["date_of_dep", "2018-05-09"], ["date_of_arr", "2018-05-09"], ["start_city", "JFK"], ["end_city", "CUN"], ["details", "Party time!"], ["created_at", "2018-04-14 22:05:52.103091"], ["updated_at", "2018-04-14 22:05:52.103091"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:05:52 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/26" for 127.0.0.1 at 2018-04-14 18:05:55 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:05:55 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:06:04 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-14 18:06:06 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:06:06 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:06:08 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:06:26 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:06:49 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:08:57 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:09:02 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:09:07 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:09:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:09:16 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:10:36 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:11:04 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:11:12 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:11:37 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:12:03 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:13:40 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+

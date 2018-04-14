@@ -19,6 +19,9 @@ body {
 .trip-single {
   text-align: center;
 }
+.calendarDiv {
+  height: 500px;
+}
 
 .nav-wrapper {
 background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);

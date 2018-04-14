@@ -45,8 +45,8 @@ class TripAddForm extends React.Component {
 			<div className="trip-add-form">
 			<form onSubmit={this.handleFormSubmit}>
 			<input type="text" name="destination" onChange={this.handleInputChange} placeholder="Where are you going?" />
-			<input type="text" name="date_of_dep" onChange={this.handleInputChange} placeholder="Date of Departure" />
-			<input type="text" name="date_of_arr" onChange={this.handleInputChange} placeholder="Date of Arrival" />
+			<input type="text" name="date_of_dep" onChange={this.handleInputChange} placeholder="Departure(YYYY-MM-DD)" />
+			<input type="text" name="date_of_arr" onChange={this.handleInputChange} placeholder="Return(YYYY-MM-DD)" />
 			<input type="text" name="start_city" onChange={this.handleInputChange} placeholder="Origin City" />
 			<input type="text" name="end_city" onChange={this.handleInputChange} placeholder="End City" />
 			<input type="text" name="details" onChange={this.handleInputChange} placeholder="Trip Details" />
