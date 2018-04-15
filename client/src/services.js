@@ -94,10 +94,11 @@ class Services {
 		})
 	}
 	
-	getAllComments() {
+	getAllComments(tdata) {
 		return axios ({
 			method: "GET",
 			url: "/api/comments",
+			data: tdata,
 			headers: {
 				'Authorization': localStorage.jwt,
 			}

@@ -15965,3 +15965,2875 @@ Processing by TripsController#index as HTML
 Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3280807147651396020)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddIndexs (20180414222217)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "trips" ADD "user_id" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "comments" ADD "trip_id" integer[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE  INDEX  "index_trips_on_user_id" ON "trips"  ("user_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_trip_id" ON "comments"  ("trip_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180414222217"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3280807147651396020)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:25:19 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (1.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 30ms (Views: 17.0ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:25:58 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-14 18:31:55 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.7ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:31:55 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 17ms (Views: 7.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:32:02 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/12" for 127.0.0.1 at 2018-04-14 18:32:05 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:32:05 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:32:05 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 18:32:07 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:32:07 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:32:08 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-14 18:32:09 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:32:09 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:32:10 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:32:13 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:32:13 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:33:32 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:33:46 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:34:02 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:34:02 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:34:16 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:34:16 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:35:08 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:35:08 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:35:55 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:35:55 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:37:54 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:37:54 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:38:47 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:38:47 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:41:48 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:41:48 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:44:01 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 23ms (Views: 0.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:44:01 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:44:26 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-14 18:44:26 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:45:58 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments/[object%20Object]" for 127.0.0.1 at 2018-04-14 18:45:58 -0400
+Processing by CommentsController#show as HTML
+  Parameters: {"id"=>"[object Object]", "comment"=>{}}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:47:18 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments/[object%20Object]" for 127.0.0.1 at 2018-04-14 18:47:18 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"[object Object]", "comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:48:57 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/comments/[object%20Object]" for 127.0.0.1 at 2018-04-14 18:48:57 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CommentsController):
+  
+actionpack (5.1.6) lib/abstract_controller/base.rb:119:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:49:52 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments/[object%20Object]" for 127.0.0.1 at 2018-04-14 18:49:52 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"[object Object]", "comment"=>{}}
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `put' for #<CommentsController:0x00007f8f771db268>
+Did you mean?  puts
+               putc):
+  
+app/controllers/comments_controller.rb:4:in `index'
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:50:04 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/comments/[object%20Object]" for 127.0.0.1 at 2018-04-14 18:50:04 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"[object Object]", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:50:37 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments/[object%20Object]" for 127.0.0.1 at 2018-04-14 18:50:37 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"[object Object]", "comment"=>{}}
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:50:38 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments/[object%20Object]" for 127.0.0.1 at 2018-04-14 18:50:38 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"[object Object]", "comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:50:50 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments/14" for 127.0.0.1 at 2018-04-14 18:50:50 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"14", "comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:51:11 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments/14" for 127.0.0.1 at 2018-04-14 18:51:11 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"14", "comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/14" for 127.0.0.1 at 2018-04-14 18:53:05 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/comments/14" for 127.0.0.1 at 2018-04-14 18:53:05 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"14", "comment"=>{}}
+  [1m[36mComment Load (4.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", "14"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 4.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column comments.post_id does not exist
+LINE 1: SELECT  "comments".* FROM "comments" WHERE "comments"."post_...
+                                                   ^
+: SELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2):
+  
+app/controllers/comments_controller.rb:7:in `index'
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-14 18:53:30 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-14 18:53:30 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 18:53:33 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments/1" for 127.0.0.1 at 2018-04-14 18:53:33 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"1", "comment"=>{}}
+  [1m[36mComment Load (14.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2[0m  [["post_id", "1"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 14.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column comments.post_id does not exist
+LINE 1: SELECT  "comments".* FROM "comments" WHERE "comments"."post_...
+                                                   ^
+: SELECT  "comments".* FROM "comments" WHERE "comments"."post_id" = $1 LIMIT $2):
+  
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 18:54:39 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/comments/1" for 127.0.0.1 at 2018-04-14 18:54:39 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"1", "comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" = $1 LIMIT $2[0m  [["trip_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips/2" for 127.0.0.1 at 2018-04-14 18:55:07 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Trip with 'id'=2):
+  
+app/controllers/trips_controller.rb:21:in `show'
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-14 18:55:10 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/comments/1" for 127.0.0.1 at 2018-04-14 18:55:10 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"1", "comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" = $1 LIMIT $2[0m  [["trip_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:13:14 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments/1" for 127.0.0.1 at 2018-04-15 11:13:14 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"1", "comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" = $1 LIMIT $2[0m  [["trip_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:14:05 -0400
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.7ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 0.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/api/comments/1" for 127.0.0.1 at 2018-04-15 11:14:05 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"1", "comment"=>{}}
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" = $1 LIMIT $2[0m  [["trip_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:14:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:14:17 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:14:19 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/comments/1" for 127.0.0.1 at 2018-04-15 11:14:19 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"1", "comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" = $1 LIMIT $2[0m  [["trip_id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:15:00 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-15 11:15:01 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments/11" for 127.0.0.1 at 2018-04-15 11:15:01 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"11", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" = $1 LIMIT $2[0m  [["trip_id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-15 11:16:38 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments/" for 127.0.0.1 at 2018-04-15 11:16:38 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-15 11:17:33 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:17:33 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-15 11:17:49 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/comments/11" for 127.0.0.1 at 2018-04-15 11:17:49 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"11", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."trip_id" = $1 LIMIT $2[0m  [["trip_id", 11], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-15 11:19:08 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/comments/11" for 127.0.0.1 at 2018-04-15 11:19:08 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"11", "comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 4.3ms)
+
+
+Started DELETE "/api/comments/5" for 127.0.0.1 at 2018-04-15 11:19:14 -0400
+Processing by CommentsController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (5.9ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 5]]
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/api/comments/11" for 127.0.0.1 at 2018-04-15 11:19:14 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"11", "comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:19:19 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:19:19 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:19:21 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments/1" for 127.0.0.1 at 2018-04-15 11:19:21 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"1", "comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:19:23 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-15 11:19:24 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments/11" for 127.0.0.1 at 2018-04-15 11:19:24 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"11", "comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:19:29 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/13" for 127.0.0.1 at 2018-04-15 11:19:31 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments/13" for 127.0.0.1 at 2018-04-15 11:19:31 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"id"=>"13", "comment"=>{}}
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:19:34 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (4.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:19:50 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:19:51 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:19:51 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:19:56 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:19:56 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:19:57 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:19:57 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:20:34 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:20:34 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (8.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 27ms (Views: 17.8ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:20:35 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:20:35 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:20:36 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:20:36 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:20:41 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:20:41 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:20:42 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:20:42 -0400
+Processing by CommentsController#index as HTML
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:21:13 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:21:13 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:21:16 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:21:16 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:21:17 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:21:17 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:21:20 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:21:20 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:21:21 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:21:21 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:22:07 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:22:07 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:22:10 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:22:10 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:22:11 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:22:11 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:23:10 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 285ms (Views: 0.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:23:49 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 58ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:24:27 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 150ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:26:24 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 11:26:33 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dieselk@optonline.net"], ["LIMIT", 1]]
+Completed 201 Created in 75ms (Views: 0.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:26:33 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 11:26:40 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "judyjersey03@yahoo.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 63ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 11:26:44 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "judyjersey03@yahoo.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 61ms (ActiveRecord: 0.5ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 11:26:48 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "judyjersey03@yahoo.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 62ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 11:26:52 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "judyjersey03@yahoo.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 62ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 11:26:55 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "judyjersey03@yahoo.com"], ["LIMIT", 1]]
+Completed 201 Created in 65ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:26:55 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:26:58 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:26:58 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:26:59 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/25" for 127.0.0.1 at 2018-04-15 11:27:03 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:27:03 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/trips/25" for 127.0.0.1 at 2018-04-15 11:27:05 -0400
+Processing by TripsController#destroy as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = $1[0m  [["id", 25]]
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:27:05 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/24" for 127.0.0.1 at 2018-04-15 11:27:08 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:27:08 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/trips/24" for 127.0.0.1 at 2018-04-15 11:27:09 -0400
+Processing by TripsController#destroy as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = $1[0m  [["id", 24]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:27:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:27:58 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:28:06 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:28:08 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 70ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:28:34 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/19" for 127.0.0.1 at 2018-04-15 11:30:43 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:30:43 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:30:56 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:31:19 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:31:19 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:32:18 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:33:15 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:34:15 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:35:34 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:37:13 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:37:23 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:37:26 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:37:26 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:38:13 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:38:13 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:39:55 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:40:02 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:40:37 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:40:44 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:40:45 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:40:45 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:40:52 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:40:52 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:40:54 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:40:54 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 11:40:58 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:40:58 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:40:59 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:40:59 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:41:29 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:41:29 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:41:31 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:41:43 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:41:54 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:42:31 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:42:34 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:43:48 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:43:54 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 11:43:55 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:43:55 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:44:11 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:44:15 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:48:45 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 103ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:50:24 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/26" for 127.0.0.1 at 2018-04-15 11:50:31 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 11:50:31 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:50:40 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:50:47 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 11:51:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:56:59 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 97ms (ActiveRecord: 1.5ms)
+
+
+  
+NameError (undefined local variable or method `null' for #<TripsController:0x00007fcd1784c218>):
+  
+app/controllers/trips_controller.rb:70:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:57:27 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 59ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:57:40 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 57ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:58:21 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 67ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:58:57 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 68ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:59:05 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 60ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 11:59:39 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 56ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 12:00:00 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 67ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:00:37 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 12:00:46 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "judyjersey03@yahoo.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 76ms (ActiveRecord: 2.5ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 12:00:52 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"judyjersey03@yahoo.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "judyjersey03@yahoo.com"], ["LIMIT", 1]]
+Completed 201 Created in 64ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:00:53 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/trips" for 127.0.0.1 at 2018-04-15 12:01:08 -0400
+Processing by TripsController#create as HTML
+  Parameters: {"destination"=>"Paris", "date_of_dep"=>"2018-05-11", "date_of_arr"=>"2018-05-09", "start_city"=>"Jersey City", "end_city"=>"North Brunswick", "details"=>"Party time!", "trip"=>{"destination"=>"Paris", "date_of_dep"=>"2018-05-11", "date_of_arr"=>"2018-05-09", "start_city"=>"Jersey City", "end_city"=>"North Brunswick", "details"=>"Party time!"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:01:08 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:01:21 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:01:48 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/trips" for 127.0.0.1 at 2018-04-15 12:02:03 -0400
+Processing by TripsController#create as HTML
+  Parameters: {"destination"=>"Paris", "date_of_dep"=>"ASAP", "date_of_arr"=>"2018-05-15", "start_city"=>"North Brunswick", "end_city"=>"Jersey City", "details"=>"Party time!", "trip"=>{"destination"=>"Paris", "date_of_dep"=>"ASAP", "date_of_arr"=>"2018-05-15", "start_city"=>"North Brunswick", "end_city"=>"Jersey City", "details"=>"Party time!"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:02:03 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/26" for 127.0.0.1 at 2018-04-15 12:02:08 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 12:02:08 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 15ms (Views: 11.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:02:11 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/13" for 127.0.0.1 at 2018-04-15 12:02:12 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 12:02:12 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:02:13 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:02:19 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 12:02:32 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dieselk@optonline.net"], ["LIMIT", 1]]
+Completed 201 Created in 64ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:02:32 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/trips" for 127.0.0.1 at 2018-04-15 12:02:46 -0400
+Processing by TripsController#create as HTML
+  Parameters: {"destination"=>"Paris", "date_of_dep"=>"2018-05-11", "date_of_arr"=>"2018-05-09", "start_city"=>"North Brunswick", "end_city"=>"Jersey City", "details"=>"Party time!", "trip"=>{"destination"=>"Paris", "date_of_dep"=>"2018-05-11", "date_of_arr"=>"2018-05-09", "start_city"=>"North Brunswick", "end_city"=>"Jersey City", "details"=>"Party time!"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 12:02:46 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:00:57 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 27ms (Views: 18.9ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/api/trips" for 127.0.0.1 at 2018-04-15 14:01:12 -0400
+Processing by TripsController#create as HTML
+  Parameters: {"destination"=>"Paris", "date_of_dep"=>"ASAP", "date_of_arr"=>"2018-05-15", "start_city"=>"North Brunswick", "end_city"=>"Jersey City", "details"=>"Party time!", "trip"=>{"destination"=>"Paris", "date_of_dep"=>"ASAP", "date_of_arr"=>"2018-05-15", "start_city"=>"North Brunswick", "end_city"=>"Jersey City", "details"=>"Party time!"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Paris"], ["date_of_dep", "ASAP"], ["date_of_arr", "2018-05-15"], ["start_city", "North Brunswick"], ["end_city", "Jersey City"], ["details", "Party time!"], ["created_at", "2018-04-15 18:01:12.647030"], ["updated_at", "2018-04-15 18:01:12.647030"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:01:12 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/27" for 127.0.0.1 at 2018-04-15 14:01:14 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:01:15 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 14:01:26 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["comment", "BirthdayWeekend"], ["created_at", "2018-04-15 18:01:26.844424"], ["updated_at", "2018-04-15 18:01:26.844424"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:01:26 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/27" for 127.0.0.1 at 2018-04-15 14:01:28 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:01:28 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:01:30 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 14:01:31 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:01:31 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/comments/9" for 127.0.0.1 at 2018-04-15 14:01:34 -0400
+Processing by CommentsController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (5.7ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 9]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:01:34 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:02:29 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 145ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:09:30 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 1.4ms)
+
+
+  
+NameError (undefined local variable or method `null' for #<TripsController:0x00007fcd16393128>):
+  
+app/controllers/trips_controller.rb:69:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:10:02 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 57ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:10:32 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 58ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:11:45 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `null' for #<TripsController:0x00007fcd15513dc8>):
+  
+app/controllers/trips_controller.rb:70:in `getData'
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:12:25 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 57ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:13:04 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 70ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:13:05 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 50ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 14:17:27 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 79ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:25:04 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/trips/26" for 127.0.0.1 at 2018-04-15 14:25:13 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:25:13 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:25:19 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 14:25:21 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:25:21 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:25:26 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:25:51 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:25:52 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:26:10 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:26:33 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/trips" for 127.0.0.1 at 2018-04-15 14:26:52 -0400
+Processing by TripsController#create as HTML
+  Parameters: {"destination"=>"Mars", "date_of_dep"=>"2018-05-11", "date_of_arr"=>"2018-05-25", "start_city"=>"Jersey City", "end_city"=>"North Brunswick", "details"=>"looking for aliens", "trip"=>{"destination"=>"Mars", "date_of_dep"=>"2018-05-11", "date_of_arr"=>"2018-05-25", "start_city"=>"Jersey City", "end_city"=>"North Brunswick", "details"=>"looking for aliens"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Mars"], ["date_of_dep", "2018-05-11"], ["date_of_arr", "2018-05-25"], ["start_city", "Jersey City"], ["end_city", "North Brunswick"], ["details", "looking for aliens"], ["created_at", "2018-04-15 18:26:52.540395"], ["updated_at", "2018-04-15 18:26:52.540395"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:26:52 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:26:59 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:27:07 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/28" for 127.0.0.1 at 2018-04-15 14:27:09 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:27:09 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/trips/28" for 127.0.0.1 at 2018-04-15 14:27:11 -0400
+Processing by TripsController#destroy as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35mSQL (5.7ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = $1[0m  [["id", 28]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:27:11 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:27:14 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:29:51 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 14:29:56 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:29:56 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:31:10 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:32:43 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:35:14 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:35:47 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:36:01 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:36:23 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:36:26 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/26" for 127.0.0.1 at 2018-04-15 14:36:29 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 14:36:29 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:37:12 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:38:44 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:38:46 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/user" for 127.0.0.1 at 2018-04-15 14:38:59 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"khalid.hosein9@gmail.com"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "khalid.hosein9@gmail.com"], ["password_digest", "$2a$10$h9Qb7PCBq3LQ.jARSDOCl.gJ58HrbfUtUe9Iqg85T9ObaLBpYlw12"], ["created_at", "2018-04-15 18:38:59.106564"], ["updated_at", "2018-04-15 18:38:59.106564"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 75ms (ActiveRecord: 9.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:04 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 65ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:05 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 62ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:05 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 61ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:05 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 63ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:05 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 60ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:06 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 60ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:06 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 60ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:06 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 60ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:09 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 64ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:09 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 61ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:09 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 58ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:09 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 60ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:10 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 61ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:23 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 63ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:27 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 64ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:33 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 404 Not Found in 61ms (ActiveRecord: 0.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:36 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"khalid.hosein9@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "khalid.hosein9@gmail.com"], ["LIMIT", 1]]
+Completed 201 Created in 64ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:39:36 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/user" for 127.0.0.1 at 2018-04-15 14:39:54 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"faisal.hosein@gmail.com", "password"=>"[FILTERED]", "user"=>{"email"=>"faisal.hosein@gmail.com"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "faisal.hosein@gmail.com"], ["password_digest", "$2a$10$cg33isBijiQ95QG2EE4WPeV4ej7rurWRs5zHomtZfugWQ1pIcWTmO"], ["created_at", "2018-04-15 18:39:54.377107"], ["updated_at", "2018-04-15 18:39:54.377107"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 70ms (ActiveRecord: 6.2ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 14:39:59 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"faisal.hosein@gmail.com", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"faisal.hosein@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "faisal.hosein@gmail.com"], ["LIMIT", 1]]
+Completed 201 Created in 62ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 14:39:59 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:20:05 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (22.8ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 94ms (Views: 33.9ms | ActiveRecord: 54.0ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:20:06 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:20:06 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 18:20:10 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:20:10 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:20:12 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:20:12 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:20:17 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (1.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/api/trips" for 127.0.0.1 at 2018-04-15 18:20:33 -0400
+Processing by TripsController#create as HTML
+  Parameters: {"destination"=>"Mars", "date_of_dep"=>"ASAP", "date_of_arr"=>"2028", "start_city"=>"Jersey City", "end_city"=>"North Brunswick", "details"=>"looking for aliens", "trip"=>{"destination"=>"Mars", "date_of_dep"=>"ASAP", "date_of_arr"=>"2028", "start_city"=>"Jersey City", "end_city"=>"North Brunswick", "details"=>"looking for aliens"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "trips" ("destination", "date_of_dep", "date_of_arr", "start_city", "end_city", "details", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["destination", "Mars"], ["date_of_dep", "ASAP"], ["date_of_arr", "2028"], ["start_city", "Jersey City"], ["end_city", "North Brunswick"], ["details", "looking for aliens"], ["created_at", "2018-04-15 22:20:33.407250"], ["updated_at", "2018-04-15 22:20:33.407250"]]
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 23ms (Views: 1.2ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:20:33 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips/29" for 127.0.0.1 at 2018-04-15 18:20:36 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:20:36 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 18:20:41 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"Awesome", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:20:41 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/29" for 127.0.0.1 at 2018-04-15 18:20:43 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:20:43 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-15 18:20:59 -0400
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dieselk@optonline.net"], ["LIMIT", 1]]
+Completed 201 Created in 82ms (Views: 0.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:20:59 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/29" for 127.0.0.1 at 2018-04-15 18:21:01 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:21:01 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/29" for 127.0.0.1 at 2018-04-15 18:25:20 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 0.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:25:20 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'=):
+  
+app/controllers/comments_controller.rb:4:in `index'
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:25:31 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:25:33 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:25:33 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'=):
+  
+app/controllers/comments_controller.rb:4:in `index'
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 18:25:35 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:25:35 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:25:37 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:25:37 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'=):
+  
+app/controllers/comments_controller.rb:4:in `index'
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 18:25:40 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:25:40 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:25:44 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:25:44 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'=):
+  
+app/controllers/comments_controller.rb:4:in `index'
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:26:13 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:26:13 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 27ms (Views: 9.4ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:26:14 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:26:16 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:26:16 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 18:26:20 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:26:20 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:26:22 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:26:22 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:28:46 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:28:56 -0400
+Processing by TripsController#update as HTML
+  Parameters: {"destination"=>"Cartagena, Columbia", "date_of_dep"=>"2018-05-11", "date_of_arr"=>"2018-05-15", "start_city"=>"EWR", "end_city"=>"CTG", "details"=>"William and Lorena wedding.", "id"=>"1", "trip"=>{"destination"=>"Cartagena, Columbia", "date_of_dep"=>"2018-05-11", "date_of_arr"=>"2018-05-15", "start_city"=>"EWR", "end_city"=>"CTG", "details"=>"William and Lorena wedding."}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[33mUPDATE "trips" SET "start_city" = $1, "updated_at" = $2 WHERE "trips"."id" = $3[0m  [["start_city", "EWR"], ["updated_at", "2018-04-15 22:28:56.190593"], ["id", 1]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 36ms (Views: 0.5ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:28:56 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:28:56 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:28:58 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:29:02 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:29:02 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 18:29:06 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:29:06 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:29:09 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:29:09 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:30:24 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:30:24 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/comments" for 127.0.0.1 at 2018-04-15 18:30:28 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"comment"=>{"comment"=>"BirthdayWeekend", "fireRedirect"=>false}}
+Unpermitted parameter: :fireRedirect
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("comment", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["comment", "BirthdayWeekend"], ["created_at", "2018-04-15 22:30:28.546709"], ["updated_at", "2018-04-15 22:30:28.546709"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:30:28 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/1" for 127.0.0.1 at 2018-04-15 18:30:31 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:30:31 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:30:34 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-15 18:30:36 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:30:36 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:30:37 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:30:42 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:30:46 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:31:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/11" for 127.0.0.1 at 2018-04-15 18:31:10 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:31:10 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/api/trips/11" for 127.0.0.1 at 2018-04-15 18:31:12 -0400
+Processing by TripsController#destroy as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "trips" WHERE "trips"."id" = $1[0m  [["id", 11]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:31:12 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (2.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/trips/26" for 127.0.0.1 at 2018-04-15 18:31:46 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:31:46 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:31:48 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/27" for 127.0.0.1 at 2018-04-15 18:31:50 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:31:50 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/27" for 127.0.0.1 at 2018-04-15 18:31:54 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/api/trips/27" for 127.0.0.1 at 2018-04-15 18:32:18 -0400
+Processing by TripsController#update as HTML
+  Parameters: {"destination"=>"Paris", "date_of_dep"=>"ASAP", "date_of_arr"=>"2018-05-15", "start_city"=>"JFK", "end_city"=>"CDG", "details"=>"Formage?", "id"=>"27", "trip"=>{"destination"=>"Paris", "date_of_dep"=>"ASAP", "date_of_arr"=>"2018-05-15", "start_city"=>"JFK", "end_city"=>"CDG", "details"=>"Formage?"}}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "trips" SET "start_city" = $1, "end_city" = $2, "details" = $3, "updated_at" = $4 WHERE "trips"."id" = $5[0m  [["start_city", "JFK"], ["end_city", "CDG"], ["details", "Formage?"], ["updated_at", "2018-04-15 22:32:18.757440"], ["id", 27]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/trips/27" for 127.0.0.1 at 2018-04-15 18:32:18 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:32:18 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:32:26 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/27" for 127.0.0.1 at 2018-04-15 18:32:28 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:32:28 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:32:34 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/12" for 127.0.0.1 at 2018-04-15 18:32:46 -0400
+Processing by TripsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT  "trips".* FROM "trips" WHERE "trips"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/comments" for 127.0.0.1 at 2018-04-15 18:32:46 -0400
+Processing by CommentsController#index as HTML
+  Parameters: {"comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 18:33:41 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 91ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:40:04 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:40:09 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:40:10 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-15 18:40:19 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 18:41:39 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected tSTRING_BEG, expecting '}'
+				"ResponseVersion": "VERSION41"
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:82: syntax error, unexpected ':', expecting keyword_end
+				"ResponseVersion": "VERSION41"
+				                 ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:83: syntax error, unexpected '}', expecting keyword_end
+				},
+				^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:87: syntax error, unexpected ')', expecting keyword_end
+					})
+					 ^):
+  
+app/controllers/trips_controller.rb:82: syntax error, unexpected tSTRING_BEG, expecting '}'
+app/controllers/trips_controller.rb:82: syntax error, unexpected ':', expecting keyword_end
+app/controllers/trips_controller.rb:83: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:87: syntax error, unexpected ')', expecting keyword_end
+Started GET "/api/trips/search" for 127.0.0.1 at 2018-04-15 18:41:56 -0400
+Processing by TripsController#getData as HTML
+  Parameters: {"trip"=>{}}
+Completed 200 OK in 64ms (Views: 0.4ms | ActiveRecord: 1.6ms)
+
+

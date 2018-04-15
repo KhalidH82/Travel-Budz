@@ -44,7 +44,7 @@ return (
 		<p>{this.state.apiData.details}</p>
 		<button className="waves-effect waves-light btn" onClick={this.deleteTrip}><Icon left>delete_forever</Icon> Remove Trip? </button>
 		<button className="waves-effect waves-light btn" onClick={this.editTrip}><Icon left>edit</Icon> Edit Trip? </button>
-		<CommentList />
+		<CommentList id={this.props.match.params.id}/>
 		<CommentAdd />
 		</div>
 		)

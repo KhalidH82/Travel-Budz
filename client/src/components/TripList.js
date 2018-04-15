@@ -46,7 +46,7 @@ render() {
 	return (
 		<div className="trip-list">
 		<button className="waves-effect waves-light btn" onClick={this.addTrip}><Icon left>add_circle</Icon> Add Trip </button>
-		<button className="waves-effect waves-light btn" onClick={this.addTrip}><Icon left>add_circle</Icon>  </button>
+		
 		{
 			this.state.apiDataLoaded ? this.renderTrips() : (<h1>Loading...</h1>)}
 			{this.state.fireRedirect ? <Redirect to="/trips/new" /> : <h1> </h1>}

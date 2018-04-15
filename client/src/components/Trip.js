@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Trip = (props) => {
 	return (
 <div className="trip">
-	<h1><Link to={`/trips/${props.id}`}>{props.destination}</Link></h1>
-	<h2>{props.details}</h2>
+	<h3><Link to={`/trips/${props.id}`}>{props.destination}</Link></h3>
+	<p>{props.details}</p>
 	</div>
 		)
 	}

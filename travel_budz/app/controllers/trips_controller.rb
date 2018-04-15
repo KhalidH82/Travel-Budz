@@ -9,7 +9,7 @@ class TripsController < ApplicationController
 
 
 
-	def index
+	def index	
 		@trips = Trip.all
 		render json: {
 			message: "Got all the trips!",

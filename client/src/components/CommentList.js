@@ -24,8 +24,9 @@ addComment() {
 }
 
 getComments() {
-	Services.getAllComments()
+	Services.getAllComments(this.props)
 	.then( comments => {
+		console.log("props", this.props)
 		console.log(comments)
 		this.setState ({
 			apiDataLoaded: true,
@@ -52,6 +53,7 @@ handleDelete(id) {
 
 
 componentDidMount() {
+	console.log("this.props", this)
 	this.getComments();
 }
 
