@@ -87,8 +87,9 @@ class Services {
 	}
 
 	search(tdata) {
+		console.log('searching 3rd party for API data', tdata);
 		return axios({
-			method: "GET",
+			method: "POST",
 			url: "/api/trips/search",
 			data: tdata
 		})

@@ -91,11 +91,7 @@ handleInputChange(e) {
             <Redirect to="/trips"/>
             )
         }
-    
-
-
-
-  }
+    }
 
 }
 

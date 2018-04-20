@@ -1,10 +1,12 @@
 require 'HTTParty'
-#require 'HTTP'
+
 class TripsController < ApplicationController
 	include HTTParty
+	headers 'Accept' => 'text/html'
+	# logger Logger.new('http_logger'), :info, :apache
 	 debug_output $stdout
 
-#	include HTTP
+
 	# before_action :authenticate_user
 
 
@@ -53,7 +55,9 @@ class TripsController < ApplicationController
 	end
 
 	def getData
-		@response = HTTParty.post("https://api-dev.fareportallabs.com/air/api/search/searchflightavailability",
+		search_params
+		p '----inside getData ' + search_params.to_s
+		@response = HTTParty.post("https://api-dev.fareportallabs.com/air/api/search/searchflightavailability", {
 			body:
 			{
 				"ResponseVersion": "VERSION41",
@@ -71,32 +75,44 @@ class TripsController < ApplicationController
 							"DepartureTime": "1100",
 							"Origin": "LON",
 							"Destination": "NYC"
-							},
-							{
-								"DepartureDate": "2018-10-23",
-								"DepartureTime": "1100",
-								"Origin": "NYC",
-								"Destination": "LON"
-							}
-						]
-					}
-				},
-				header: {
-					"Content-Type" => "application/json",
-					"Authorization" => "Basic ZGllc2Vsa0BvcHRvbmxpbmUubmV0OjI0MTUxQUE5"
-					})
-
-		render json: {
-			message: "data refreshed",
-			data: @response
-		}
-		p @response
+						},
+						{
+							"DepartureDate": "2018-10-23",
+							"DepartureTime": "1100",
+							"Origin": "NYC",
+							"Destination": "LON"
+						}
+					]
+				}
+			},
+			headers: {
+				"Content-Type" => "application/json",
+				"Authorization" => "Basic ZGllc2Vsa0BvcHRvbmxpbmUubmV0OjI0MTUxQUE5"
+			}
+		}) # end of post
+		# p " THAT FUCKING THING -- " + @response.headers["content-length"]
+		# if @response
+			render :json => {
+				status: 500
+				message: "data refreshed",
+				data: @response.to_json
+			}
+		# else
+		# 	render json: {
+		# 		message: 'failed headers again',
+		# 		data: nil
+		# 	}
+		# end
 	end
 
 	private
 		def trip_params
 			params.require(:trip).permit(:destination, :date_of_dep, :date_of_arr, :start_city, :end_city, :details)
+		end	
+
+		def search_params
+			params.permit(:child_seat, :children, :class, :d_time, :dep_date, :lap_child, :no_of_adults, :origin, :destination, :r_time, :ret_date, :seniors,  :trip)
+		end
 		
-	end	
 end
 

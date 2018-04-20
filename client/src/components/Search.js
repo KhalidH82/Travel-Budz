@@ -10,18 +10,18 @@ class Search extends React.Component {
 			apiDataLoaded: false,
 			apiData: null,
 			
-			origin: null,
-			destination: null,
-			dep_date: null,
-			d_time: null,
-			ret_date: null,
-			r_time: null,
-			class: null,
-			no_of_adults: null,
-			seniors: null,
-			children: null,
-			lap_child: null,
-			child_seat: null
+			origin: "JFK",
+			destination: "LON",
+			dep_date: "2018-05-09",
+			d_time: "1100",
+			ret_date: "2018-05-20",
+			r_time: "1100",
+			class: "ECONOMY",
+			no_of_adults: "1",
+			seniors: "0",
+			children: "0",
+			lap_child: "0",
+			child_seat: "0"
 		}
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -41,8 +41,21 @@ class Search extends React.Component {
 
 	handleFormSubmit(e) {
 		e.preventDefault();
-		let fieldData = {origin: this.state.origin, destination: this.state.destination, dep_date: this.state.dep_date,
-						  d_time: this.state.d_time, ret_date: this.state.ret_date, r_time: this.state.r_time, class: this.state.class, no_of_adults: this.state.no_of_adults, seniors: this.state.seniors, children: this.state.children, lap_child: this.state.lap_child, child_seat: this.state.child_seat}
+		const fieldData = {
+			origin: this.state.origin, 
+			destination: this.state.destination, 
+			dep_date: this.state.dep_date,
+			d_time: this.state.d_time, 
+			ret_date: this.state.ret_date, 
+			r_time: this.state.r_time, 
+			class: this.state.class, 
+			no_of_adults: this.state.no_of_adults, 
+			seniors: this.state.seniors, 
+			children: this.state.children, 
+			lap_child: this.state.lap_child, 
+			child_seat: this.state.child_seat
+		}
+
 		Services.search(fieldData)
 		.then( data => {
 			console.log(data)
