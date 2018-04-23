@@ -20164,3 +20164,154 @@ Processing by TripsController#index as HTML
 Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.5ms)
 
 
+Started POST "/api/user_token" for 127.0.0.1 at 2018-04-23 15:20:20 -0400
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"dieselk@optonline.net", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dieselk@optonline.net"], ["LIMIT", 1]]
+Completed 201 Created in 96ms (Views: 0.2ms | ActiveRecord: 18.5ms)
+
+
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:20:20 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:20:34 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:20:39 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:20:42 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:20:43 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:20:46 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:24:27 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:27:13 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:28:57 -0400
+  
+SyntaxError (/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+				message: "data refreshed",
+				^~~~~~~
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+				message: "data refreshed",
+				                         ^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+			}}
+			^
+/Users/khalidhosein/code/wdi/PROJECTS/Travel-Budz/travel_budz/app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/trips_controller.rb:97: syntax error, unexpected tIDENTIFIER, expecting '}'
+app/controllers/trips_controller.rb:97: syntax error, unexpected ',', expecting keyword_end
+app/controllers/trips_controller.rb:99: syntax error, unexpected '}', expecting keyword_end
+app/controllers/trips_controller.rb:118: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/trips" for 127.0.0.1 at 2018-04-23 15:29:21 -0400
+Processing by TripsController#index as HTML
+  [1m[36mTrip Load (7.0ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Completed 200 OK in 34ms (Views: 17.1ms | ActiveRecord: 12.0ms)
+
+

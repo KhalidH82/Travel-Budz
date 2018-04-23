@@ -54,56 +54,56 @@ class TripsController < ApplicationController
 		}
 	end
 
-	def getData
-		search_params
-		p '----inside getData ' + search_params.to_s
-		@response = HTTParty.post("https://api-dev.fareportallabs.com/air/api/search/searchflightavailability", {
-			body:
-			{
-				"ResponseVersion": "VERSION41",
-				"FlightSearchRequest": {
-					"Adults": "1",
-					"Child": "0",
-					"ClassOfService": "ECONOMY",
-					"InfantInLap": "0",
-					"InfantOnSeat": "0",
-					"Seniors": "0",
-					"TypeOfTrip": "ROUNDTRIP",
-					"SegmentDetails": [
-						{
-							"DepartureDate": "2018-10-13",
-							"DepartureTime": "1100",
-							"Origin": "LON",
-							"Destination": "NYC"
-						},
-						{
-							"DepartureDate": "2018-10-23",
-							"DepartureTime": "1100",
-							"Origin": "NYC",
-							"Destination": "LON"
-						}
-					]
-				}
-			},
-			headers: {
-				"Content-Type" => "application/json",
-				"Authorization" => "Basic ZGllc2Vsa0BvcHRvbmxpbmUubmV0OjI0MTUxQUE5"
-			}
-		}) # end of post
-		# p " THAT FUCKING THING -- " + @response.headers["content-length"]
-		# if @response
-			render :json => {
-				status: 500
-				message: "data refreshed",
-				data: @response.to_json
-			}
-		# else
-		# 	render json: {
-		# 		message: 'failed headers again',
-		# 		data: nil
-		# 	}
-		# end
-	end
+	# def getData
+	# 	search_params
+	# 	p '----inside getData ' + search_params.to_s
+	# 	@response = HTTParty.post("https://api-dev.fareportallabs.com/air/api/search/searchflightavailability", {
+	# 		body:
+	# 		{
+	# 			"ResponseVersion": "VERSION41",
+	# 			"FlightSearchRequest": {
+	# 				"Adults": "1",
+	# 				"Child": "0",
+	# 				"ClassOfService": "ECONOMY",
+	# 				"InfantInLap": "0",
+	# 				"InfantOnSeat": "0",
+	# 				"Seniors": "0",
+	# 				"TypeOfTrip": "ROUNDTRIP",
+	# 				"SegmentDetails": [
+	# 					{
+	# 						"DepartureDate": "2018-10-13",
+	# 						"DepartureTime": "1100",
+	# 						"Origin": "LON",
+	# 						"Destination": "NYC"
+	# 					},
+	# 					{
+	# 						"DepartureDate": "2018-10-23",
+	# 						"DepartureTime": "1100",
+	# 						"Origin": "NYC",
+	# 						"Destination": "LON"
+	# 					}
+	# 				]
+	# 			}
+	# 		},
+	# 		headers: {
+	# 			"Content-Type" => "application/json",
+	# 			"Authorization" => "Basic ZGllc2Vsa0BvcHRvbmxpbmUubmV0OjI0MTUxQUE5"
+	# 		}
+	# 	}) # end of post
+	# 	# p " THAT FUCKING THING -- " + @response.headers["content-length"]
+	# 	# if @response
+	# 		render :json => {
+	# 			status: 500
+	# 			message: "data refreshed",
+	# 			data: @response.to_json
+	# 		}
+	# 	# else
+	# 	# 	render json: {
+	# 	# 		message: 'failed headers again',
+	# 	# 		data: nil
+	# 	# 	}
+	# 	# end
+	# end
 
 	private
 		def trip_params
