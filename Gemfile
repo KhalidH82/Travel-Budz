@@ -18,6 +18,8 @@ gem 'puma', '~> 3.7'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+	gem 'pg', '>= 0.18', '< 2.0'
+
 # gem 'httparty', '0.13.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -28,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-    gem 'foreman', '~> 0.84.0'
+  gem 'foreman', '~> 0.84.0'
 
 end
 
@@ -40,7 +42,6 @@ group :development do
 end
 
 group :production do
-	gem 'pg', '>= 0.18', '< 2.0'
 
 end
 
