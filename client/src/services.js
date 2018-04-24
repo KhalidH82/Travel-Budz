@@ -98,7 +98,7 @@ class Services {
 	getAllComments(tdata) {
 		return axios ({
 			method: "GET",
-			url: "https://travelbudz.herokuapp.com//api/comments",
+			url: "https://travelbudz.herokuapp.com/api/comments",
 			data: tdata,
 			headers: {
 				'Authorization': localStorage.jwt,
