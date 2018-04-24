@@ -1,10 +1,10 @@
-require 'HTTParty'
+# require 'HTTParty'
 
 class TripsController < ApplicationController
-	include HTTParty
-	headers 'Accept' => 'text/html'
+	# include HTTParty
+	# headers 'Accept' => 'text/html'
 	# logger Logger.new('http_logger'), :info, :apache
-	 debug_output $stdout
+	 # debug_output $stdout
 
 
 	# before_action :authenticate_user

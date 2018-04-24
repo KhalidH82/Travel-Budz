@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-	include HTTParty
+	#include HTTParty
 
 	# def search
 	# 	@response = HTTParty.post("https://api-dev.fareportallabs.com/air/api/search/searchflightavailability",
