@@ -5,7 +5,7 @@ class Services {
 	getAllTrips() {
 		return axios ({
 			method: "GET",
-			url: "https://travelbudz.herokuapp.com/api/trips",
+			url: "https://travelbudz.herokuapp.com//api/trips",
 			headers: {
 				'Authorization': localStorage.jwt,
 			}
@@ -17,7 +17,7 @@ class Services {
 		
 		return axios ({
 			method: "GET",
-			url: `https://travelbudz.herokuapp.com/api/trips/${id}`,
+			url: `https://travelbudz.herokuapp.com//api/trips/${id}`,
 			headers: {
 				'Authorization': localStorage.jwt,
 			}
@@ -27,7 +27,7 @@ class Services {
 	createTrip(trip) {
 		return axios({
 			method: "POST",
-			url: "https://travelbudz.herokuapp.com/api/trips",
+			url: "/api/trips",
 			data: {
 				destination: trip.destination,
 				date_of_dep: trip.date_of_dep,
@@ -45,7 +45,7 @@ class Services {
 	updateTrip(trip, id) {
 		return axios({
 			method: "PUT",
-			url: `https://travelbudz.herokuapp.com/api/trips/${id}`,
+			url: `/api/trips/${id}`,
 			data: {
 				destination: trip.destination,
 				date_of_dep: trip.date_of_dep,
@@ -63,7 +63,7 @@ class Services {
 	deleteTrip(id) {
 		return axios({
 			method: "DELETE",
-			url: `https://travelbudz.herokuapp.com/api/trips/${id}`,
+			url: `/api/trips/${id}`,
 		headers: {
 			'Authorization': localStorage.jwt,
 			}
@@ -73,7 +73,7 @@ class Services {
 	logIn(user) {
 		return axios({
 			method: "POST",
-			url: 'https://travelbudz.herokuapp.com/api/user_token',
+			url: '/api/user_token',
 			data: user
 		})
 	}
@@ -81,7 +81,7 @@ class Services {
 	register(info) {
 		return axios({
 			method: "POST",
-			url: "https://travelbudz.herokuapp.com/api/user",
+			url: "/api/user",
 			data: info
 		})
 	}
@@ -90,7 +90,7 @@ class Services {
 		console.log('searching 3rd party for API data', tdata);
 		return axios({
 			method: "POST",
-			url: "https://travelbudz.herokuapp.com/api/trips/search",
+			url: "/api/trips/search",
 			data: tdata
 		})
 	}
@@ -98,7 +98,7 @@ class Services {
 	getAllComments(tdata) {
 		return axios ({
 			method: "GET",
-			url: "https://travelbudz.herokuapp.com/api/comments",
+			url: "/api/comments",
 			data: tdata,
 			headers: {
 				'Authorization': localStorage.jwt,
@@ -109,7 +109,7 @@ class Services {
 	createComment(comment) {
 		return axios ({
 			method: "POST",
-			url: "https://travelbudz.herokuapp.com/api/comments",
+			url: "/api/comments",
 			data: {
 				comment: comment
 			},
@@ -122,7 +122,7 @@ class Services {
 	deleteComment(id) {
 		return axios({
 			method: "DELETE",
-			url: `https://travelbudz.herokuapp.com/api/comments/${id}`,
+			url: `/api/comments/${id}`,
 		headers: {
 			'Authorization': localStorage.jwt,
 			}
