@@ -20,7 +20,7 @@ export default (
   <Router>
     <Switch>
      
-      <Route exact path="/" component={App}/>
+      <Route exact path="https://travelbudz.herokuapp.com/" component={App}/>
       <Route path="/trips/search" component={Search} />
       <Route path="/trips/calendar" component={Calendar} />
       <Route exact path="/trips" component={TripList} />
