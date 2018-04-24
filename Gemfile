@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'knock'
-gem 'http', '3.0.0'
+# gem 'http', '3.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record
@@ -18,7 +18,7 @@ gem 'puma', '~> 3.7'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'httparty', '0.13.5'
+# gem 'httparty', '0.13.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
