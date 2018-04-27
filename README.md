@@ -1,6 +1,7 @@
+ Project 4 React on Rails
 
 <h1>Travel-Budz</h1>
- Project 4 React on Rails
+<a href="https://travelbudz.herokuapp.com/"><img src="./public/static/media/screen.png"></a>
  
 
 <h3>MVP</h3>
